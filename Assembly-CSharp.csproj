@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\EndScript.cs" />
      <Compile Include="Assets\Scripts\FontColorSwitch.cs" />
+     <Compile Include="Assets\Scripts\GUIScript.cs" />
      <Compile Include="Assets\Scripts\MakeInvisible.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />

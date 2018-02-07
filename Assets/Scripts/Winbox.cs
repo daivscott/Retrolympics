@@ -12,5 +12,8 @@ public class Winbox : MonoBehaviour {
 
         //GameObject.Find("Player").SendMessage("Moving");
         Player.Moving();
+
+
+        GameObject.Find("Main Camera").SendMessage("ShowHideGUIobj");
     }
 }
