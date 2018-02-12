@@ -74,8 +74,6 @@ public class Player : MonoBehaviour
         anim.SetBool("jump", !grounded);
         jump = !grounded;
 
-        
-
     }
 
 public static void Moving()

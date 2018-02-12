@@ -13,6 +13,7 @@ public class Timer : MonoBehaviour
     public Text InfoText;
     public Text InfoTextShadow;
     private float startTime;
+    private float currentScore;
     private bool finished = false;
     private bool started = false;
     private bool ready = false;
@@ -59,6 +60,8 @@ public class Timer : MonoBehaviour
             return;
 
         float t = Time.time - startTime;
+
+        currentScore = t;
 
         string minutes = ((int)t / 60).ToString();
         string seconds = (t % 60).ToString("f3");
@@ -166,5 +169,7 @@ public class Timer : MonoBehaviour
     {
         finished = true;
         TimerText.color = Color.yellow;
+        PlayerPrefs.SetFloat("CurrentScore", currentScore);
+        Debug.Log(PlayerPrefs.GetFloat("CurrentScore").ToString());
     }
 }
