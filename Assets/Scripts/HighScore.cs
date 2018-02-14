@@ -11,6 +11,7 @@ public class HighScore : MonoBehaviour {
     void Start()
     {
         score = 0;
+        
     }
 
     void OnLevelComplete()
@@ -19,15 +20,11 @@ public class HighScore : MonoBehaviour {
         score = PlayerPrefs.GetFloat("CurrentScore");
         for (int i = 1; i <= 5; i++) //for top 5 highscores
         {
-            if (PlayerPrefs.GetInt("highscorePos" + i) < score)     //if cuurent score is in top 5
+            if (PlayerPrefs.GetFloat("highscorePos" + i) > score)     //if current score is in top 5
             {
-                temp = PlayerPrefs.GetInt("highscorePos" + i);     //store the old highscore in temp varible to shift it down 
-                PlayerPrefs.SetFloat("highscorePos" + i, score);     //store the currentscore to highscores
-                if (i < 5)                                        //do this for shifting scores down
-                {
-                    int j = i + 1;
-                    PlayerPrefs.SetFloat("highscorePos" + j, temp);
-                }
+                temp = PlayerPrefs.GetFloat("highscorePos" + i);     //store the old highscore in temp varible to shift it down 
+                PlayerPrefs.SetFloat("highscorePos" + i, score);     //store the currentscore to highscore position in loop
+                score = temp;                                        //set score to temp(old score) to be checked through rest of loop
             }
         }
     }
@@ -38,7 +35,7 @@ public class HighScore : MonoBehaviour {
         {
             for (int i = 1; i <= 5; i++)
             {
-                GUI.Box(new Rect(100, 75 * i, 150, 50), "Pos " + i + ". " + PlayerPrefs.GetInt("highscorePos" + i));
+                GUI.Box(new Rect(100, 75 * i, 150, 50), "Pos " + i + ". " + PlayerPrefs.GetFloat("highscorePos" + i));
             }
         }
     }

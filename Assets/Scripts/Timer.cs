@@ -170,6 +170,13 @@ public class Timer : MonoBehaviour
         finished = true;
         TimerText.color = Color.yellow;
         PlayerPrefs.SetFloat("CurrentScore", currentScore);
-        Debug.Log(PlayerPrefs.GetFloat("CurrentScore").ToString());
+        //OnLevelComplete();
+        GameObject.Find("Winbox").SendMessage("OnLevelComplete");
+        Debug.Log("Score1 = " + PlayerPrefs.GetFloat("highscorePos1").ToString());
+        Debug.Log("Score2 = " + PlayerPrefs.GetFloat("highscorePos2").ToString());
+        Debug.Log("Score3 = " + PlayerPrefs.GetFloat("highscorePos3").ToString());
+        Debug.Log("Score4 = " + PlayerPrefs.GetFloat("highscorePos4").ToString());
+        Debug.Log("Score5 = " + PlayerPrefs.GetFloat("highscorePos5").ToString());
+        Debug.Log("Current Score = " + PlayerPrefs.GetFloat("CurrentScore").ToString());
     }
 }
