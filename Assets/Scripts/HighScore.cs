@@ -11,7 +11,6 @@ public class HighScore : MonoBehaviour {
     void Start()
     {
         score = 0;
-        
     }
 
     void OnLevelComplete()

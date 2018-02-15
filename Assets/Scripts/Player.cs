@@ -7,7 +7,9 @@ public class Player : MonoBehaviour
 
     public float moveSpeed;
     public float jumpSpeed;
+    //public float startTime;
     public static bool isMoving;
+    public static bool started = false;
 
     private Animator anim;
 
@@ -23,7 +25,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         myRigidbody2D = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();             
+        anim = GetComponent<Animator>();
+        //startTime = Time.time;
     }
 
     // Update is called once per frame
@@ -80,5 +83,10 @@ public static void Moving()
         {
             isMoving = !isMoving;
         }
-    
+
+public static void Started()
+        {
+            started = !started;
+        }
+
 }

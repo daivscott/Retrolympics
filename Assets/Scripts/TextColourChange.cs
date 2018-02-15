@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class TextColourChange : MonoBehaviour {
 
-    public Text TitleText;
-    public Text TitleTextShadow;
+    public Text CycleColorText;
     private int iter = 1;
 
     // Use this for initialization
@@ -30,7 +29,7 @@ public class TextColourChange : MonoBehaviour {
 
             if (iter == 1)
             {
-                TitleText.color = Color.red;
+                CycleColorText.color = Color.red;
                 //Debug.Log("red");            
                 yield return new WaitForSeconds(.05f);
                 iter++;
@@ -38,7 +37,7 @@ public class TextColourChange : MonoBehaviour {
 
             if (iter == 2)
             {
-                TitleText.color = Color.blue;
+                CycleColorText.color = Color.blue;
                 //Debug.Log("green");
                 yield return new WaitForSeconds(.05f);
                 iter++;
@@ -46,14 +45,14 @@ public class TextColourChange : MonoBehaviour {
 
             if (iter == 3)
             {
-                TitleText.color = Color.green;
+                CycleColorText.color = Color.green;
                 //Debug.Log("blue");            
                 yield return new WaitForSeconds(.05f);
                 iter++;
             }
             if (iter == 4)
             {
-                TitleText.color = Color.yellow;
+                CycleColorText.color = Color.yellow;
                 //Debug.Log("green");
                 yield return new WaitForSeconds(.05f);
                 iter = 1;

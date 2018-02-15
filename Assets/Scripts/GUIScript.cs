@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class GUIScript : MonoBehaviour {
 
-    public GameObject GUIobj;
-    int counter;
+    public GameObject RestartBtn;
+    public GameObject MainMenuBtn;
+    //int counter;
 
-	// Use this for initialization
-	public void ShowHideGUIobj ()
+    // Show/Hide Button
+    public void ShowHideGUIobj ()
     {
-        GUIobj.SetActive(!GUIobj.activeSelf);     
+        RestartBtn.SetActive(!RestartBtn.activeSelf);
+        MainMenuBtn.SetActive(!MainMenuBtn.activeSelf);
     }
 	
 	

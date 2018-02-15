@@ -5,15 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class EndScript : MonoBehaviour {
 
-	// Use this for initialization
+	// Restart the game
 	public void RestartGame()
     {
         SceneManager.LoadScene("200metres");
         Player.Moving();
 	}
-	
-	// Update is called once per frame
-	public void ExitGame()
+
+    // Return to main menu
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        Player.Moving();
+    }
+
+    // Exit the game
+    public void ExitGame()
     {
         Debug.Log("Exit button pressed");
         Application.Quit();
