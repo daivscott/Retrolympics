@@ -1,29 +1,70 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HighScore : MonoBehaviour {
+    public Canvas nameCanvas;
+    public Canvas mainCanvas;
+    public InputField inputField;
     public bool levelComplete;
     public string highscorePos;
-    public float score;
-    public float temp;
+    public float winScore;
+    public string winName;
+    public float tempScore;
+    public string tempName;
+    private string userName;
+    private float currentScore;
+    private bool nameEntry = false;
 
-    void Start()
+    public void Awake()
     {
-        score = 0;
+        winScore = 0;
+        winName = "NULL";
     }
 
-    void OnLevelComplete()
+    IEnumerator OnLevelComplete()
     {
         levelComplete = true;
-        score = PlayerPrefs.GetFloat("CurrentScore");
-        for (int i = 1; i <= 5; i++) //for top 5 highscores
+        winScore = PlayerPrefs.GetFloat("CurrentScore");
+        //winName = PlayerPrefs.GetString("currentPlayerName");
+
+        for (int i = 1; i <= 5; i++) //loop to store/check through the top 5 highscores
         {
-            if (PlayerPrefs.GetFloat("highscorePos" + i) > score)     //if current score is in top 5
+            if (PlayerPrefs.GetFloat("highscoreScore" + i) > winScore)     //if current score is in top 5
             {
-                temp = PlayerPrefs.GetFloat("highscorePos" + i);     //store the old highscore in temp varible to shift it down 
-                PlayerPrefs.SetFloat("highscorePos" + i, score);     //store the currentscore to highscore position in loop
-                score = temp;                                        //set score to temp(old score) to be checked through rest of loop
+                mainCanvas.gameObject.SetActive(false);
+                nameCanvas.gameObject.SetActive(true);
+                inputField.Select();
+
+
+
+
+
+                if (!nameEntry)
+                {
+                    while (winName == "NULL")
+                    {
+                        yield return null;
+                        winName = PlayerPrefs.GetString("currentPlayerName");
+                        
+                    }
+                    nameCanvas.gameObject.SetActive(false);
+                    mainCanvas.gameObject.SetActive(true);
+                    GameObject.Find("Scoreboard").SendMessage("ShowHideGUIobj");
+                }
+                //Debug.Log("still going");
+                
+                
+                    GameObject.Find("Scoreboard").SendMessage("ShowHideGUIobj");
+                    tempScore = PlayerPrefs.GetFloat("highscoreScore" + i);     //store the old highscore in temp varible to shift it down 
+                    tempName = PlayerPrefs.GetString("highscoreName" + i);
+                    PlayerPrefs.SetFloat("highscoreScore" + i, winScore);     //store the currentscore to highscore position in loop
+                    PlayerPrefs.SetString("highscoreName" + i, winName);
+                    winScore = tempScore;                                        //set score to temp(old score) to be checked through rest of loop
+                    winName = tempName;
+                nameEntry = false;
+                
             }
         }
     }
@@ -34,7 +75,7 @@ public class HighScore : MonoBehaviour {
         {
             for (int i = 1; i <= 5; i++)
             {
-                GUI.Box(new Rect(100, 75 * i, 150, 50), "Pos " + i + ". " + PlayerPrefs.GetFloat("highscorePos" + i));
+                GUI.Box(new Rect(100, 75 * i, 150, 50), PlayerPrefs.GetString("highscoreName" + i) + " = " + PlayerPrefs.GetFloat("highscoreScore" + i));
             }
         }
     }

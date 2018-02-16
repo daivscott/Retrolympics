@@ -61,3 +61,4 @@ C:\Users\David\Desktop\Retrolympics\Retrolympics\Temp\bin\Debug\UnityEngine.Holo
 C:\Users\David\Desktop\Retrolympics\Retrolympics\Temp\bin\Debug\UnityEngine.VR.xml
 C:\Users\David\Desktop\Retrolympics\Retrolympics\obj\Debug\Assembly-CSharp.dll
 C:\Users\David\Desktop\Retrolympics\Retrolympics\obj\Debug\Assembly-CSharp.pdb
+C:\Users\David\Desktop\Retrolympics\Retrolympics\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
