@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Countdown.cs" />
      <Compile Include="Assets\Scripts\EndScript.cs" />
+     <Compile Include="Assets\Scripts\Footsteps.cs" />
      <Compile Include="Assets\Scripts\GUIScript.cs" />
      <Compile Include="Assets\Scripts\GetUserName.cs" />
      <Compile Include="Assets\Scripts\HighScore.cs" />
