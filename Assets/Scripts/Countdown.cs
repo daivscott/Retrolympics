@@ -14,6 +14,19 @@ public class Countdown : MonoBehaviour {
     public Text InfoText;
     public Text InfoTextShadow;
 
+    public AudioClip three;
+    public AudioClip two;
+    public AudioClip one;
+    public AudioClip go;
+    public AudioClip gunshot;
+
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void StartCountdown()
     {
         if (Player.started)
@@ -27,24 +40,34 @@ public class Countdown : MonoBehaviour {
         InfoText.text = "";
         InfoTextShadow.text = "";
 
+        AudioClip clip = three;
+        audioSource.PlayOneShot(clip);
         string seconds = countdown.ToString();
         CountdownText.text = seconds;
         CountdownTextShadow.text = seconds;
         yield return new WaitForSeconds(1);
         countdown--;
 
+        clip = two;
+        audioSource.PlayOneShot(clip);
         seconds = countdown.ToString();
         CountdownText.text = seconds;
         CountdownTextShadow.text = seconds;
         yield return new WaitForSeconds(1);
         countdown--;
 
+        clip = one;
+        audioSource.PlayOneShot(clip);
         seconds = countdown.ToString();
         CountdownText.text = seconds;
         CountdownTextShadow.text = seconds;
         yield return new WaitForSeconds(1);
         countdown--;
 
+        clip = go;
+        audioSource.PlayOneShot(clip);
+        clip = gunshot;
+        audioSource.PlayOneShot(clip);
         CountdownText.text = "Go!";
         CountdownTextShadow.text = "Go!";
         Player.Started();

@@ -9,8 +9,7 @@ public class GetUserName : MonoBehaviour {
     public InputField inputField;
     public Canvas nameCanvas;
     public Canvas mainCanvas;
-
-
+    
     public void Awake()
     {
         PlayerPrefs.SetString("currentPlayerName", "NULL");

@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\Count.cs" />
      <Compile Include="Assets\Scripts\Countdown.cs" />
+     <Compile Include="Assets\Scripts\DontDestroyTheme.cs" />
      <Compile Include="Assets\Scripts\EndScript.cs" />
      <Compile Include="Assets\Scripts\Footsteps.cs" />
      <Compile Include="Assets\Scripts\GUIScript.cs" />

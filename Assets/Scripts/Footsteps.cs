@@ -8,7 +8,9 @@ public class Footsteps : MonoBehaviour {
     public AudioClip[] rightClips;
 
     private AudioSource audioSource;
+    private float VolumeSlider = 0.1f;
     private bool leftFoot;
+    
 
     private void Awake()
     {
@@ -17,13 +19,14 @@ public class Footsteps : MonoBehaviour {
 
     private void Step()
     {
+        audioSource.volume = VolumeSlider;
         AudioClip clip = GetRandomClip();
         audioSource.PlayOneShot(clip);
     }
 
     private AudioClip GetRandomClip()
     {
-        if (leftFoot)
+        if (!leftFoot)
         {
             leftFoot = !leftFoot;
             return leftClips[UnityEngine.Random.Range(0, leftClips.Length)];            

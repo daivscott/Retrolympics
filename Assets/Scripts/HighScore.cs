@@ -16,11 +16,18 @@ public class HighScore : MonoBehaviour {
     private string userName;
     private float currentScore;
     private bool nameEntry = false;
+    private bool winner = false;
+    private bool winnerSoundPlayed = false;
+
+    private AudioSource audioSource;
+    public AudioClip won;
+    public AudioClip lost;
 
     public void Awake()
     {
         winScore = 0;
         winName = "NULL";
+        audioSource = GetComponent<AudioSource>();
     }
 
     IEnumerator OnLevelComplete()
@@ -33,13 +40,11 @@ public class HighScore : MonoBehaviour {
         {
             if (PlayerPrefs.GetFloat("highscoreScore" + i) > winScore)     //if current score is in top 5
             {
+                winner = !winner;
+                raceOutcome();
                 mainCanvas.gameObject.SetActive(false);
                 nameCanvas.gameObject.SetActive(true);
                 inputField.Select();
-
-
-
-
 
                 if (!nameEntry)
                 {
@@ -65,7 +70,25 @@ public class HighScore : MonoBehaviour {
                     winName = tempName;
                 nameEntry = false;
                 
+                
             }
+            
+        }
+        raceOutcome();
+    }
+
+    private void raceOutcome()
+    {
+        if (winner && !winnerSoundPlayed)
+        {
+            AudioClip clip = won;
+            audioSource.PlayOneShot(clip);
+            winnerSoundPlayed = !winnerSoundPlayed;
+        }
+        if (!winner && !winnerSoundPlayed)
+        {
+            AudioClip clip = lost;
+            audioSource.PlayOneShot(clip);
         }
     }
 
