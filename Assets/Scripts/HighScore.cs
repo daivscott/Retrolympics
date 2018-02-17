@@ -34,8 +34,7 @@ public class HighScore : MonoBehaviour {
     {
         levelComplete = true;
         winScore = PlayerPrefs.GetFloat("CurrentScore");
-        //winName = PlayerPrefs.GetString("currentPlayerName");
-
+        
         for (int i = 1; i <= 5; i++) //loop to store/check through the top 5 highscores
         {
             if (PlayerPrefs.GetFloat("highscoreScore" + i) > winScore)     //if current score is in top 5
@@ -44,7 +43,8 @@ public class HighScore : MonoBehaviour {
                 raceOutcome();
                 mainCanvas.gameObject.SetActive(false);
                 nameCanvas.gameObject.SetActive(true);
-                inputField.Select();
+                StartCoroutine(PauseTyping());
+                //inputField.Select();                
 
                 if (!nameEntry)
                 {
@@ -75,6 +75,7 @@ public class HighScore : MonoBehaviour {
             
         }
         raceOutcome();
+        //inputField.Select();
     }
 
     private void raceOutcome()
@@ -90,6 +91,14 @@ public class HighScore : MonoBehaviour {
             AudioClip clip = lost;
             audioSource.PlayOneShot(clip);
         }
+    }
+
+    IEnumerator PauseTyping()
+    {
+        //Debug.Log("1");
+        yield return new WaitForSeconds(1);
+        inputField.Select();
+        //Debug.Log("2");
     }
 
     /*void OnGUI()

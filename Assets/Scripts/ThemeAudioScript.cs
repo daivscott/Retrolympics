@@ -4,18 +4,28 @@ using UnityEngine;
 
 public class ThemeAudioScript : MonoBehaviour {
 
-    private AudioSource audioSource;
-    public AudioClip themeSound;
+    //private AudioSource audioSource;
+    //public AudioClip themeSound;
     private bool playingAudio = false;
 
     private void Awake()
     {
-        if (!playingAudio)
+        
+        /*if (playingAudio)
         {
             audioSource = GetComponent<AudioSource>();
             AudioClip clip = themeSound;
             audioSource.PlayOneShot(clip);
-            playingAudio = !playingAudio;
+            //playingAudio = !playingAudio;
+        }*/
+    }
+    void Start()
+    {
+        if (playingAudio == false)
+        {
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
+            playingAudio = true;
         }
     }
 }

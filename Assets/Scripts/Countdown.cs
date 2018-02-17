@@ -21,10 +21,11 @@ public class Countdown : MonoBehaviour {
     public AudioClip gunshot;
 
     private AudioSource audioSource;
-
+    public AudioSource audioSource2;
+    
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();        
     }
 
     public void StartCountdown()
@@ -63,11 +64,9 @@ public class Countdown : MonoBehaviour {
         CountdownTextShadow.text = seconds;
         yield return new WaitForSeconds(1);
         countdown--;
-
-        clip = go;
-        audioSource.PlayOneShot(clip);
+        
         clip = gunshot;
-        audioSource.PlayOneShot(clip);
+        audioSource2.PlayOneShot(clip);
         CountdownText.text = "Go!";
         CountdownTextShadow.text = "Go!";
         Player.Started();
