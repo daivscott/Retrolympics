@@ -92,7 +92,7 @@ public class HighScore : MonoBehaviour {
         }
     }
 
-    void OnGUI()
+    /*void OnGUI()
     {
         if (levelComplete)
         {
@@ -101,5 +101,5 @@ public class HighScore : MonoBehaviour {
                 GUI.Box(new Rect(100, 75 * i, 150, 50), PlayerPrefs.GetString("highscoreName" + i) + " = " + PlayerPrefs.GetFloat("highscoreScore" + i));
             }
         }
-    }
+    }*/
 }

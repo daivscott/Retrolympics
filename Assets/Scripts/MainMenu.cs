@@ -5,8 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
-
-	public void StartGame()
+    
+    public void StartGame()
     {
         SceneManager.LoadScene("200metres");
     }

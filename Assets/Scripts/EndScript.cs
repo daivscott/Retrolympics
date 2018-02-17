@@ -19,6 +19,13 @@ public class EndScript : MonoBehaviour {
         Player.Moving();
     }
 
+    // Show the scoreboard
+    public void Scoreboard()
+    {
+        SceneManager.LoadScene("Scoreboard");
+        //Player.Moving();
+    }
+
     // Exit the game
     public void ExitGame()
     {

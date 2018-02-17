@@ -59,9 +59,11 @@
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\ResetScoreBoard.cs" />
      <Compile Include="Assets\Scripts\TextColourChange.cs" />
+     <Compile Include="Assets\Scripts\ThemeAudioScript.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
      <Compile Include="Assets\Scripts\Winbox.cs" />
      <Compile Include="Assets\Scripts\parallax.cs" />
+     <Compile Include="Assets\Scripts\updateScoreboard.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

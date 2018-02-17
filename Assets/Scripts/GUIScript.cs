@@ -6,6 +6,7 @@ public class GUIScript : MonoBehaviour {
 
     public GameObject RestartBtn;
     public GameObject MainMenuBtn;
+    public GameObject ScoreboardBtn;
     //int counter;
 
     // Show/Hide Button
@@ -13,6 +14,7 @@ public class GUIScript : MonoBehaviour {
     {
         RestartBtn.SetActive(!RestartBtn.activeSelf);
         MainMenuBtn.SetActive(!MainMenuBtn.activeSelf);
+        ScoreboardBtn.SetActive(!ScoreboardBtn.activeSelf);
     }
 	
 	
