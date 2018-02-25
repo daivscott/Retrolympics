@@ -7,9 +7,16 @@ public class ThemeAudioScript : MonoBehaviour {
     //private AudioSource audioSource;
     //public AudioClip themeSound;
     private bool playingAudio = false;
+    public static ThemeAudioScript sin;
 
     private void Awake()
     {
+        if (sin == null)
+            sin = this;
+        else if (sin != this)
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
         
         /*if (playingAudio)
         {
@@ -21,11 +28,11 @@ public class ThemeAudioScript : MonoBehaviour {
     }
     void Start()
     {
-        if (playingAudio == false)
-        {
-            AudioSource audio = GetComponent<AudioSource>();
-            audio.Play();
-            playingAudio = true;
-        }
+        //if (playingAudio == false)
+        //{
+        //    AudioSource audio = GetComponent<AudioSource>();
+        //    audio.Play();
+        //    playingAudio = true;
+        //}
     }
 }
