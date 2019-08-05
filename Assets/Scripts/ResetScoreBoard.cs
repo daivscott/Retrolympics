@@ -13,11 +13,11 @@ public class ResetScoreBoard : MonoBehaviour {
         PlayerPrefs.SetFloat("highscoreScore4", 14.123456f);
         PlayerPrefs.SetFloat("highscoreScore5", 15.123456f);
 
-        PlayerPrefs.SetString("highscoreName1", "Davie Com");
-        PlayerPrefs.SetString("highscoreName2", "Lauren Com");
-        PlayerPrefs.SetString("highscoreName3", "Emily Com");
-        PlayerPrefs.SetString("highscoreName4", "Sophia Com");
-        PlayerPrefs.SetString("highscoreName5", "Ivy Com");
+        PlayerPrefs.SetString("highscoreName1", "Davie CPU");
+        PlayerPrefs.SetString("highscoreName2", "Lauren CPU");
+        PlayerPrefs.SetString("highscoreName3", "Emily CPU");
+        PlayerPrefs.SetString("highscoreName4", "Sophia CPU");
+        PlayerPrefs.SetString("highscoreName5", "Ivy CPU");
     }
 	
 	// Update is called once per frame
