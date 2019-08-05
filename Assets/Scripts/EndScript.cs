@@ -9,14 +9,21 @@ public class EndScript : MonoBehaviour {
 	public void RestartGame()
     {
         SceneManager.LoadScene("200metres");
-        Player.Moving();
+        if(Player.isMoving = true)
+        {
+            Player.Moving();
+        }
+        
 	}
 
     // Return to main menu
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
-        Player.Moving();
+        if (Player.isMoving = true)
+        {
+            Player.Moving();
+        }
     }
 
     // Show the scoreboard

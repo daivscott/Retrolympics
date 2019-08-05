@@ -21,12 +21,25 @@ public class ResetScoreBoard : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         if (Input.GetKeyDown(KeyCode.F12))
         {
             ResetScore();
         }
 
+        // set defaults if no score present
+        if (!PlayerPrefs.HasKey("highscoreName1"))
+        {
+            Debug.Log("highscore not initialised");
+            ResetScore();
+        }
+
+        //if (Input.GetKeyDown(KeyCode.F1))
+        //{
+        //    PlayerPrefs.DeleteAll();
+        //    //ResetScore();
+        //}
 
     }
 }

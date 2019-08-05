@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     public float jumpSpeed;
     //public float startTime;
-    public static bool isMoving;
+    public static bool isMoving = false;
     public static bool started = false;
 
     private Animator anim;
